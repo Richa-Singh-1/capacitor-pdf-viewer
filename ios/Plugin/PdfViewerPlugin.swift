@@ -9,10 +9,10 @@ import Capacitor
 public class PdfViewerPlugin: CAPPlugin {
     private let implementation = PdfViewer()
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.resolve([
-            "value": implementation.echo(value)
-        ])
+    @objc func loadPDF(_ call: CAPPluginCall) {
+        let url = call.getString("url") ?? ""
+        print("url", url)
+        implementation.loadPDF(url: url)
+        call.resolve()
     }
 }

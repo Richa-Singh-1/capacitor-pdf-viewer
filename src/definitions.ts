@@ -1,3 +1,3 @@
 export interface PdfViewerPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  loadPDF(options: { url: string }): Promise<void>;
 }
