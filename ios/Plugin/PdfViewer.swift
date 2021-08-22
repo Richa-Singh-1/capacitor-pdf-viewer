@@ -13,10 +13,10 @@ import PDFKit
             print("Error: cannot create URL")
             return
         }
-        var todosUrlRequest = URLRequest(url: pdfURL)
-        todosUrlRequest.httpMethod = "GET"
+        var pdfURLRequest = URLRequest(url: pdfURL)
+        pdfURLRequest.httpMethod = "GET"
         let session = URLSession.shared
-        let task = session.dataTask(with: todosUrlRequest){
+        let task = session.dataTask(with: pdfURLRequest){
             (data, response, error)in
             guard let data = data else {
                 return
